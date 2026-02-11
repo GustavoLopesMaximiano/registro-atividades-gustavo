@@ -8,17 +8,21 @@ function render() {
 
   records.forEach((r, index) => {
     const li = document.createElement('li');
-    li.className = 'record';
-    li.textContent = `${r.title} — ${r.duration} min`;
+    li.textContent = `${r.title} — R$${r.duration}`;
+    if (r.duration < 0) {
+        li.className = 'record red-text';
+    } else {
+        li.className = 'record green-text'
+    }
     recordsList.appendChild(li);
   });
 }
 
 btnAdd.addEventListener('click', () => {
-  const title = prompt('Título da atividade:');
+  const title = prompt('Título da Transação:');
   if (!title) return;
 
-  const duration = prompt('Duração em minutos (ex: 30):');
+  const duration = prompt('Quantia de Transação (em reais):');
   if (!duration) return;
 
   records.push({ title: title.trim(), duration: duration.trim() });

@@ -1,6 +1,6 @@
 # Registro de Atividades
 
-Aplicativo simples para registrar, acompanhar e revisar atividades diárias.
+Aplicativo de controle de gastos pessoais.
 
 # Como executar localmente
 
